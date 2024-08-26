@@ -1,0 +1,41 @@
+{
+  "root": true,
+  "plugins": ["hexagonal-architecture"],
+
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+      }
+    },
+    {
+      "files": ["*.ts"],
+      "excludedFiles": ["main.ts","*.{module,routes}.ts"],
+      "extends": [],
+      "rules": {
+        "hexagonal-architecture/enforce": ["warn"]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": [
+
+      ],
+      "rules": {}
+    },
+    {
+      "files": ["*.html"],
+      "excludedFiles": ["*inline-template-*.component.html"],
+      "extends": ["plugin:prettier/recommended"],
+      "rules": {
+        // NOTE: WE ARE OVERRIDING THE DEFAULT CONFIG TO ALWAYS SET THE PARSER TO ANGULAR (SEE BELOW)
+        "prettier/prettier": ["error", { "parser": "angular" }]
+      }
+    }
+  ]
+}
