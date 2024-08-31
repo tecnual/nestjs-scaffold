@@ -15,7 +15,7 @@
     },
     {
       "files": ["*.ts"],
-      "excludedFiles": ["main.ts","*.{module,routes}.ts"],
+      "excludedFiles": ["main.ts","*.{module,routes,e2e-spec}.ts"],
       "extends": [],
       "rules": {
         "hexagonal-architecture/enforce": ["warn"]
